@@ -228,9 +228,11 @@ class Parser:
                 if hasattr(ele,'name'):
                    ele_name = hasattr(ele,'name')
                    if ele.name in layer_names:
-                      mapping = self.collect_style_urls_for_placemarks(ele.Placemark)
-                      if mapping:
-                          self.layer_styles[str(ele.name)] = mapping
+                      print ele
+                      if hasattr(ele,'Placemark'):
+                          mapping = self.collect_style_urls_for_placemarks(ele.Placemark)
+                          if mapping:
+                              self.layer_styles[str(ele.name)] = mapping
                    #else:
                    #   print ele.name
         
